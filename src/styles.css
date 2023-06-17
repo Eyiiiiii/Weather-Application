@@ -48,6 +48,7 @@ small a {
 
 span a {
   text-decoration: none;
+  color: black;
 }
 
 li {
@@ -55,4 +56,8 @@ li {
   margin: 0;
   padding: 0;
   line-height: 19px;
+}
+
+li:first-letter {
+  text-transform: capitalize;
 }
