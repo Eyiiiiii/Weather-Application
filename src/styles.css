@@ -58,6 +58,6 @@ li {
   line-height: 19px;
 }
 
-li:first-letter {
+#description:first-letter {
   text-transform: capitalize;
 }

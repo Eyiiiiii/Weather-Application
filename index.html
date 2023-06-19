@@ -24,8 +24,27 @@
     <div class="container">
       <div class="weather-wrapper">
         <div class="weather-app">
+          <form id="search-form" class="mb-3 mt-5" itemid="place-input">
+            <div class="row">
+              <div class="col-9">
+                <input
+                  type="search"
+                  placeholder="Enter a City"
+                  class="form-control"
+                />
+              </div>
+              <div class="col-3">
+                <input
+                  type="submit"
+                  value="search"
+                  class="btn btn-primary w-100"
+                  id="btn-srch"
+                />
+              </div>
+            </div>
+          </form>
           <div class="between">
-            <h1 class="top" id="City">Silang, Philippines</h1>
+            <h1 class="top" id="city">Philippines</h1>
             <ul class="ul">
               <li id="curr-time">Saturday 03:44</li>
               <li id="description">clear</li>
@@ -44,9 +63,9 @@
             </div>
             <div class="col-6">
               <ul class="ul">
-                <li id="weather-Preci">Precipitation: 0%</li>
-                <li id="weather-Humi">Humidity: 73%</li>
-                <li id="weather-Wind">Wind: 2 km/h</li>
+                <li>Precipitation: <span id="weather-Preci">0</span>%</li>
+                <li>Humidity: <span id="weather-Humi">73</span>%</li>
+                <li>Wind: <span id="weather-Wind">2</span> km/h</li>
               </ul>
             </div>
           </div>
@@ -62,5 +81,6 @@
         </small>
       </div>
     </div>
+    <script src="src/app.js"></script>
   </body>
 </html>
