@@ -34,40 +34,50 @@
                 />
               </div>
               <div class="col-3">
-                <input
-                  type="submit"
-                  value="search"
-                  class="btn btn-primary"
-                  id="btn-srch"
-                />
+                <input type="submit" value="search" id="btn-srch" />
               </div>
             </div>
           </form>
           <div class="between">
             <h1 class="top" id="city">Philippines</h1>
-            <ul class="ul">
-              <li id="curr-time">Saturday 03:44</li>
-              <li id="description">clear</li>
-            </ul>
-          </div>
-          <div class="row">
-            <div class="col-6">
-              <div class="d-flex weather-temperature">
+            <div class="d-flex justify-content-between">
+              <ul class="ul">
+                <li id="curr-time">Saturday 03:44</li>
+                <li id="description">clear</li>
+              </ul>
+              <div class="d-flex justify-content-between">
                 <img
                   src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
                   alt="Broken clouds"
                   id="icon"
                 />
                 <strong id="temperature">12</strong>
-                <span class="units">°C | <a href="#">°F</a></span>
               </div>
             </div>
-            <div class="col-6">
-              <ul class="ul">
-                <li>Pressure: <span id="weather-Press">0</span>%</li>
-                <li>Humidity: <span id="weather-Humi">73</span>%</li>
-                <li>Wind: <span id="weather-Wind">2</span> km/h</li>
-              </ul>
+          </div>
+          <p class="label">Weekly Forecast</p>
+          <div class="row">
+            <div class="d-flex justify-content-between">
+              <div class="week" id="tuesday">Tuesday</div>
+              <div class="week" id="wednesday">Wednesday</div>
+              <div class="week" id="thursday">Thursday</div>
+              <div class="week" id="friday">Friday</div>
+              <div class="week" id="saturday">Saturday</div>
+              <div class="week" id="sunday">Sunday</div>
+              <div class="week" id="monday">Monday</div>
+            </div>
+          </div>
+          <hr />
+          <p class="label">Highlights</p>
+          <div class="d-flex justify-content-around">
+            <div id="highlight">
+              Pressure: <span id="weather-Press">0</span>hPa
+            </div>
+            <div id="highlight">
+              Humidity: <span id="weather-Humi">73</span>%
+            </div>
+            <div id="highlight">
+              Wind: <span id="weather-Wind">2</span> km/h
             </div>
           </div>
         </div>

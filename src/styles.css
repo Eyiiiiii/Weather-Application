@@ -7,14 +7,13 @@
   border: 1px solid #dadde1;
   border-radius: 10px;
   max-width: 1100px;
+  background-image: url("https://i.pinimg.com/564x/07/75/6b/07756bb31b38366afae15dcdddccf42c.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .form-control {
   margin-left: 70px;
-}
-
-#btn-srch {
-  margin-left: 80px;
 }
 
 .top {
@@ -49,6 +48,13 @@
   font-size: 16px;
 }
 
+.week {
+  border: 1px solid #dadde1;
+  border-radius: 5px;
+  padding: 15px;
+  margin-right: 70px;
+}
+
 small a {
   text-decoration: none;
 }
@@ -74,14 +80,31 @@ li {
   font-weight: 500;
 }
 
+#curr-time {
+  margin-top: 25px;
+}
+
 #icon {
-  display: block;
-  margin: 50px auto;
+  margin-right: 80px;
+}
+
+#btn-srch {
+  margin-left: 80px;
+  background-color: #b1c3cf;
+  border-color: #b1c3cf;
+  border-radius: 5px;
+  padding: 5px 20px 5px;
 }
 
 #temperature {
   font-weight: normal;
-  text-align: center;
-  display: block;
   font-size: 60px;
+  margin-right: 70px;
+}
+
+#highlight {
+  border: 1px solid #dadde1;
+  border-radius: 5px;
+  padding: 40px;
+  margin-right: 70px;
 }
