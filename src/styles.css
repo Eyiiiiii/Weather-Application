@@ -91,7 +91,7 @@ li {
 #btn-srch {
   margin-left: 80px;
   background-color: #b1c3cf;
-  border-color: #b1c3cf;
+  border: none;
   border-radius: 5px;
   padding: 5px 20px 5px;
 }
