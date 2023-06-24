@@ -19,6 +19,7 @@ function showTemp(response) {
 
   let updateIcon = document.querySelector("#icon");
   updateIcon.setAttribute("src", response.data.condition.icon_url);
+  updateIcon.setAttribute("alt", response.data.condition[0]);
 
   let currentTime = new Date(response.data.time * 1000);
   let hours = currentTime.getHours();
@@ -38,9 +39,18 @@ function showTemp(response) {
   let updatedTime = document.querySelector("#curr-time");
   updatedTime.innerHTML = timeString;
 }
-let apiKey = "605tfadf3cb16c3770fb6d9dc43a237o";
-let city = "Lisbon";
-let units = "metric";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${units}`;
 
-axios.get(apiUrl).then(showTemp);
+function search(city) {
+  let apiKey = "605tfadf3cb16c3770fb6d9dc43a237o";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showTemp);
+}
+
+function submitBtn(event) {
+  event.preventDefault();
+  let cityUpdate = document.querySelector("#place-Input");
+  search(cityUpdate.value);
+}
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", submitBtn);
