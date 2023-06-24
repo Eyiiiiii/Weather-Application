@@ -24,8 +24,13 @@
     <div class="container">
       <div class="weather-wrapper">
         <div class="weather-app">
+          <span class="unit"
+            ><a href="#" id="cel">Celcius</a> |
+            <a href="#" id="fah">Fahrenheit</a></span
+          >
+          <hr />
           <form id="search-form" class="mb-3 mt-5" id="place-input">
-            <div class="row">
+            <div class="row" id="search-area">
               <div class="col-9">
                 <input
                   type="search"
@@ -49,7 +54,7 @@
               </ul>
               <div class="d-flex justify-content-between">
                 <img src="" alt="Broken clouds" id="icon" />
-                <strong id="temperature">12</strong>
+                <strong id="temperature">12</strong><span id="symbol">°</span>
               </div>
             </div>
           </div>

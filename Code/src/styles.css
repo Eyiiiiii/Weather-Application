@@ -1,13 +1,19 @@
+body {
+  background-image: url("https://i.pinimg.com/564x/e0/15/5b/e0155bd1736acf6d216b7d7fccda7c06.jpg");
+  background-size: cover;
+  backdrop-filter: blur(5px);
+}
+
 .weather-wrapper {
   margin-top: 45px;
   margin-left: 100px;
 }
 .weather-app {
   padding: 20px;
-  border: 1px solid #dadde1;
+  border: 1px solid darkslategrey;
   border-radius: 10px;
   max-width: 1100px;
-  background-image: url("https://i.pinimg.com/564x/07/75/6b/07756bb31b38366afae15dcdddccf42c.jpg");
+  background-image: url("https://i.pinimg.com/564x/e0/15/5b/e0155bd1736acf6d216b7d7fccda7c06.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -17,7 +23,7 @@
 }
 
 .top {
-  color: blueviolet;
+  color: #616667;
   font-size: 38px;
   font-weight: 700;
   margin-bottom: -15px;
@@ -65,6 +71,10 @@ li {
   font-weight: light;
 }
 
+#search-area {
+  margin-top: -40px;
+}
+
 #description:first-letter {
   text-transform: capitalize;
 }
@@ -93,15 +103,20 @@ li {
 #temperature {
   font-weight: normal;
   font-size: 60px;
-  margin-right: 70px;
 }
 
 #highlight {
-  border: 1px solid lightgray;
+  border: 1px solid darkslategrey;
   border-radius: 7px;
   padding: 40px;
   margin-right: 50px;
   margin-left: 50px;
+}
+
+#symbol {
+  font-size: 34px;
+  margin-right: 70px;
+  margin-top: 10px;
 }
 
 #tuesday,
@@ -111,8 +126,21 @@ li {
 #saturday,
 #sunday,
 #monday {
-  border: 1px solid lightgray;
+  border: 1px solid darkslategrey;
   padding-bottom: 50px;
   padding-top: 20px;
   margin-right: 10px;
+}
+
+#cel,
+#fah {
+  color: blueviolet;
+  font-weight: 600;
+}
+
+#cel:hover,
+#fah:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: indianred;
 }
