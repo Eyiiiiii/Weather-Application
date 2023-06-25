@@ -39,6 +39,48 @@ function showTemp(response) {
 
   let updatedTime = document.querySelector("#curr-time");
   updatedTime.innerHTML = timeString;
+
+  getForecast(response.data.coord);
+}
+
+function displayWeeklyForecast(response) {
+  let forecast = response.data.daily;
+  let updateForecast = document.querySelector("#week");
+
+  let forecastHtml = `<div class="row">`;
+  let days = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `<div class="col text-center" id="day">
+              ${day}
+              <br />
+              <img
+                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png"
+                alt=""
+                width="50"
+              />
+              <div class="weekly-temp">
+                <span class="maxtemp">18 </span><span class="mintemp">12</span>
+              </div>
+            </div>`;
+  });
+
+  forecastHtml = forecastHtml + `</div>`;
+  updateForecast.innerHTML = forecastHtml;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "605tfadf3cb16c3770fb6d9dc43a237o";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showForecast);
 }
 
 function search(city) {
@@ -78,3 +120,4 @@ let celcius = document.querySelector("#cel");
 celcius.addEventListener("click", showCelcius);
 
 search("Silang");
+displayWeeklyForecast();

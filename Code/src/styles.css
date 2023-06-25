@@ -5,7 +5,7 @@ body {
 }
 
 .weather-wrapper {
-  margin-top: 45px;
+  margin-top: 30px;
   margin-left: 100px;
 }
 .weather-app {
@@ -128,9 +128,10 @@ li {
 #sunday,
 #monday {
   border: 1px solid darkslategrey;
-  padding-bottom: 50px;
-  padding-top: 20px;
+  padding-bottom: 40px;
+  padding-top: 10px;
   margin-right: 10px;
+  border-radius: 7px;
 }
 
 #cel,
