@@ -76,3 +76,5 @@ fahrenheit.addEventListener("click", showFahrenheit);
 
 let celcius = document.querySelector("#cel");
 celcius.addEventListener("click", showCelcius);
+
+search("Silang");
