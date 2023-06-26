@@ -126,7 +126,7 @@ function showCelcius(event) {
   updateTemp.innerHTML = Math.round(celTemp);
 }
 
-search("Manila");
+search("Silang");
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", submitBtn);
