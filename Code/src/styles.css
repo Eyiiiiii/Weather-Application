@@ -122,8 +122,8 @@ li {
 
 #day {
   border: 1px solid darkslategrey;
-  padding-bottom: 40px;
-  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-top: 5px;
   margin-right: 10px;
   border-radius: 7px;
 }
