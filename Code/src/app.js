@@ -43,11 +43,9 @@ function showTemp(response) {
   getForecast(response.data.coordinates);
 }
 
-function displayWeeklyForecast(response) {
-  let listForecast = response.data.daily;
-  let updateForecast = document.querySelector("#week");
-
-  let forecastHtml = `<div class="row">`;
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
   let days = [
     "Monday",
     "Tuesday",
@@ -55,22 +53,41 @@ function displayWeeklyForecast(response) {
     "Thursday",
     "Friday",
     "Saturday",
+    "Sunday",
   ];
-  days.forEach(function (day) {
-    forecastHtml =
-      forecastHtml +
-      `<div class="col text-center" id="day">
-              ${day}
+
+  return days[day];
+}
+
+function displayWeeklyForecast(response) {
+  let listForecast = response.data.daily;
+  let updateForecast = document.querySelector("#week");
+
+  let forecastHtml = `<div class="row">`;
+
+  listForecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHtml =
+        forecastHtml +
+        `<div class="col text-center" id="day">
+              ${formatDay(forecastDay.time)}
               <br />
               <img
-                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png"
+                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+                  forecastDay.condition.icon
+                }.png"
                 alt=""
                 width="50"
               />
-              <div class="weekly-temp">
-                <span class="maxtemp">18 </span><span class="mintemp">12</span>
+               <div class="weekly-temp">
+                <span class="maxtemp">${Math.round(
+                  forecastDay.temperature.maximum
+                )} </span><span class="mintemp">${Math.round(
+          forecastDay.temperature.minimum
+        )}</span>
               </div>
             </div>`;
+    }
   });
 
   forecastHtml = forecastHtml + `</div>`;
@@ -119,5 +136,4 @@ fahrenheit.addEventListener("click", showFahrenheit);
 let celcius = document.querySelector("#cel");
 celcius.addEventListener("click", showCelcius);
 
-displayWeeklyForecast();
 search("Silang");
