@@ -1,4 +1,5 @@
 function showTemp(response) {
+  celTemp = response.data.temperature.current;
   let updateTemp = document.querySelector("#temperature");
   updateTemp.innerHTML = Math.round(celTemp);
 
@@ -19,8 +20,6 @@ function showTemp(response) {
 
   let updateIcon = document.querySelector("#icon");
   updateIcon.setAttribute("src", response.data.condition.icon_url);
-
-  celTemp = response.data.temperature.current;
 
   let currentTime = new Date(response.data.time * 1000);
   let hours = currentTime.getHours();
