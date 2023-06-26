@@ -40,11 +40,11 @@ function showTemp(response) {
   let updatedTime = document.querySelector("#curr-time");
   updatedTime.innerHTML = timeString;
 
-  getForecast(response.data.coord);
+  getForecast(response.data.coordinates);
 }
 
 function displayWeeklyForecast(response) {
-  let forecast = response.data.daily;
+  let listForecast = response.data.daily;
   let updateForecast = document.querySelector("#week");
 
   let forecastHtml = `<div class="row">`;
@@ -79,8 +79,8 @@ function displayWeeklyForecast(response) {
 
 function getForecast(coordinates) {
   let apiKey = "605tfadf3cb16c3770fb6d9dc43a237o";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(showForecast);
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeeklyForecast);
 }
 
 function search(city) {
@@ -119,5 +119,5 @@ fahrenheit.addEventListener("click", showFahrenheit);
 let celcius = document.querySelector("#cel");
 celcius.addEventListener("click", showCelcius);
 
-search("Silang");
 displayWeeklyForecast();
+search("Silang");

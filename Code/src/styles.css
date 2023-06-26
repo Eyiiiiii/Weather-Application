@@ -120,13 +120,7 @@ li {
   margin-top: 10px;
 }
 
-#tuesday,
-#wednesday,
-#thursday,
-#friday,
-#saturday,
-#sunday,
-#monday {
+#day {
   border: 1px solid darkslategrey;
   padding-bottom: 40px;
   padding-top: 10px;
